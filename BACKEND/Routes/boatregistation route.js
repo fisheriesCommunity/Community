@@ -3,7 +3,7 @@ const router = express.Router();
 //insert model
 const user = require("../model/boatregistation model");
 //insert user contraller
-const boatregistationctrl = require("../controlers/boatregistationctrl");
+const boatregistationctrl = require("../Controllers/boatregistationctrl");
 
 router.get("/",boatregistationctrl.getAllusers);
 router.post("/",boatregistationctrl.addusers);
