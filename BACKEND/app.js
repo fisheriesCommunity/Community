@@ -3,20 +3,24 @@ const mongoose = require("mongoose");  // Import Mongoose to connect to MongoDB
 const cors = require("cors");  // Import CORS to handle cross-origin requests
 const multer = require("multer");  // Import Multer to handle file uploads
 const path = require("path");  // To work with file paths
+
+// Import routes
 const complaintRoutes = require("./Routes/ComplaintRoutes");  // Import complaint routes
 const requestRoutes = require("./Routes/RequestRoutes");  // Import request routes
+const boatRegistrationRoutes = require("./route/boatregistation route");  // Import boat registration routes
 
 const app = express();  // Create Express app
 const PORT = process.env.PORT || 8000;  // Define the server port
-const MONGO_URI = "mongodb+srv://user:Olivea16@demo.hg0q5c8.mongodb.net/?retryWrites=true&w=majority";  // MongoDB connection URI
+const MONGO_URI = "mongodb+srv://minuuu:hqduSSjiSvg7EO1x@cluster0.d9xye.mongodb.net/";  // MongoDB connection URI
 
 // Middleware
 app.use(cors());  // Allow requests from different origins (CORS)
 app.use(express.json());  // Parse incoming JSON data
 
-// Use complaint routes and request routes
+// Use various routes
 app.use("/complaints", complaintRoutes);  // For complaints
 app.use("/requests", requestRoutes);  // For requests
+app.use("/users", boatRegistrationRoutes);  // For boat registration routes
 app.use("/file", express.static("file"));  // Serve static files from 'file' directory
 
 // Setup Multer configuration for file uploads
@@ -32,7 +36,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Simple file upload route (from complaint management)
+// Simple file upload route (for complaint management)
 app.post("/upload", upload.single("file"), (req, res) => {
     if (!req.file) {
         return res.status(400).send("No file uploaded.");
@@ -40,19 +44,18 @@ app.post("/upload", upload.single("file"), (req, res) => {
     res.send(`File uploaded successfully: ${req.file.filename}`);
 });
 
-// PDF file upload route (from main branch)
+// PDF file upload route
 require("./Model/PdfModel");
 const pdfSchema = mongoose.model("PdfDetails");
 
 app.post("/uploadFile", upload.single("file"), async (req, res) => {
-    console.log(req.file);
     const { name, title } = req.body;
     const pdf = req.file.filename;
     try {
         await pdfSchema.create({
-            name: name,
-            title: title,
-            pdf: pdf,
+            name,
+            title,
+            pdf,
         });
         console.log("File uploaded successfully");
         res.send({ status: 200 });
@@ -73,7 +76,7 @@ app.get("/getFile", async (req, res) => {
     }
 });
 
-// User Registration and Login (from main branch)
+// User Registration and Login
 require("./Model/Register");
 const Treasurer = mongoose.model("Register");
 
