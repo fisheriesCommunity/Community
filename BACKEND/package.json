@@ -1,16 +1,25 @@
 {
+
   "name": "backend_complaint",
+
+  "name": "loanproject",
+
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+
     "start": "node app.js",
     "dev": "nodemon app.js"
+
+    "start": "nodemon app.js"
+
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+
     "@fortawesome/fontawesome-free": "^6.6.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -21,6 +30,12 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.3",
+    "multer": "^1.4.5-lts.1",
+
     "nodemon": "^3.1.4"
   }
 }
