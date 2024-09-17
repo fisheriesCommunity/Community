@@ -116,7 +116,7 @@ app.use("/", (req, res, next) => {
 });
 
 // MongoDB Connection URI
-const mongoURI = "mongodb+srv://admin:WCxmjnperCjmX0pK@clusterfisheries.5mn6x.mongodb.net/yourDatabaseName?retryWrites=true&w=majority";
+const mongoURI = "mongodb+srv://admin:WCxmjnperCjmX0pK@clusterfisheries.5mn6x.mongodb.net/FisheriesCommunityDB?retryWrites=true&w=majority";
 
 // Connect to MongoDB and start the server
 mongoose.connect(mongoURI, {
