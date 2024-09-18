@@ -1,0 +1,65 @@
+.process-container {
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    padding: 8px;
+    margin-right: 10px;
+    flex:0.8;
+}
+
+.search-container button {
+    padding: 2px 0px 2px;
+    flex:0.5;
+    
+    
+    
+}
+
+.filter-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.status-filter, .date-range {
+    margin-right: 20px;
+}
+
+.status-filter label {
+    font-weight: bold;
+}
+
+.status-filter ul {
+    list-style: none;
+    padding: 0;
+}
+
+.status-filter li {
+    margin-bottom: 5px;
+}
+
+.complaint-list {
+    margin-bottom: 20px;
+}
+
+.complaint-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination span {
+    margin: 50px 20px;
+    cursor: pointer;
+}
