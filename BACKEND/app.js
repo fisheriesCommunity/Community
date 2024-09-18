@@ -1,24 +1,3 @@
-
-//app.js
-const express = require ("express");
-const mongoose = require("mongoose");
-const router = require ("./Route/UserRouter");
-
-const app = express();
-const cors = require("cors");
-
-//Middleware
-app.use(express.json());
-app.use(cors());
-app.use("/users",router);
-
-mongoose.connect("mongodb+srv://admin:lqhlcqTNVSzGt4Xu@fishstocks.oyejb.mongodb.net/")
-.then(()=> console.log("Connected to MongoDB"))
-.then(() => {
-    app.listen(5005);
-})
-.catch((err)=> console.log((err)));
-
 const express = require("express");  // Import Express
 const mongoose = require("mongoose");  // Import Mongoose to connect to MongoDB
 const cors = require("cors");  // Import CORS to handle cross-origin requests
@@ -26,13 +5,11 @@ const multer = require("multer");  // Import Multer to handle file uploads
 const path = require("path");  // To work with file paths
 
 // Import routes
-const complaintRoutes = require("./Routes/ComplaintRoutes");  // Import complaint routes
-const requestRoutes = require("./Routes/RequestRoutes");  // Import request routes
-const boatRegistrationRoutes = require("./route/boatregistation route");  // Import boat registration routes
+const complaintRoutes = require("./Routes/ComplaintRoutes");
+const requestRoutes = require("./Routes/RequestRoutes");
+const boatRegistrationRoutes = require("./Routes/boatregistation route");
 
 const app = express();  // Create Express app
-const PORT = process.env.PORT || 8000;  // Define the server port
-const MONGO_URI = "mongodb+srv://minuuu:hqduSSjiSvg7EO1x@cluster0.d9xye.mongodb.net/";  // MongoDB connection URI
 
 // Middleware
 app.use(cors());  // Allow requests from different origins (CORS)
@@ -134,20 +111,23 @@ app.post("/login", async (req, res) => {
 });
 
 // Error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);  // Log the error for debugging
-    res.status(500).send("Something went wrong!");  // Send a generic error message
+app.use("/", (req, res, next) => {
+    res.send("It is Working");
 });
 
-// Connect to MongoDB and start the server
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log("Connected to MongoDB");
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`);
-        });
-    })
-    .catch(err => {
-        console.error("Failed to connect to MongoDB", err);
-    });
+// MongoDB Connection URI
+const mongoURI = "mongodb+srv://admin:WCxmjnperCjmX0pK@clusterfisheries.5mn6x.mongodb.net/FisheriesCommunityDB?retryWrites=true&w=majority";
 
+// Connect to MongoDB and start the server
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => {
+    console.log("Connected to MongoDB");
+    const PORT = 5000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+})
+.catch((err) => console.log("MongoDB connection error:", err));
