@@ -1,0 +1,40 @@
+/* App.css */
+
+.loan-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #007bff, #00c6ff); /* Gradient background */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .loan-ll {
+    display: inline;
+  }
+  
+  .loan-ll h1 {
+    font-size: 1.3rem;
+    font-weight: 600; /* Slightly bolder font */
+    color: #ffffff; /* White text color */
+    padding: 14px 20px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .loan-ll h1:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white on hover */
+    cursor: pointer;
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  .loan-ll h1:active {
+    transform: translateY(1px); /* Press down effect on click */
+  }
+  

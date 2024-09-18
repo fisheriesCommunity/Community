@@ -6,6 +6,17 @@ import TripR from './Components/TripR/TripR';
 import BoatR from './Components/BoatR/BoatR';
 import UpData from './Components/Updata/UpData';
 import BoatHome from './Components/BoatHome/BoatHome';
+import {Route, Routes } from 'react-router';
+import './App.css';
+import Loan from './Components/Loan/Loan';
+import Nav from './Components/Nav/Nav';
+import Addrequest from './Components/Addrequest/Addrequest';
+import Requests from './Components/Requestdetails/Requests';
+import Updaterequest from './Components/Updaterequest/Updaterequest';
+import Register from './Components/Register/Register';
+import Login from './Components/Login/Login';
+import Contactadmin from './Components/Contactadmin/Contactadmin';
+import Uploadcollateral from './Components/Uploadcollateral/Uploadcollateral';
 
 function App() {
   return (
@@ -20,6 +31,21 @@ function App() {
         <Route path="/Schedule" element={<TripR />} />
         <Route path="/ScheduleDetails" element={<TripD />} />
       </Routes>
+      <Nav />
+      <React.Fragment>
+        <Routes>
+          <Route path="/" element={<Loan />}/>
+          <Route path="/mainloan" element={<Loan />}/>
+          <Route path="/addrequest" element={<Addrequest />}/>
+          <Route path="/requestdetails" element={<Requests />}/>
+          <Route path="/regi" element={<Register />}/>
+          <Route path="/log" element={<Login />}/>
+          <Route path="/contact" element={<Contactadmin />}/>
+          <Route path="/upload" element={<Uploadcollateral />}/>
+          <Route path="/requestdetails/:id" element={<Updaterequest />}/>
+        
+        </Routes>
+      </React.Fragment>
     </div>
   );
 }
