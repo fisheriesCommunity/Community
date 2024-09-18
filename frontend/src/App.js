@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // No Router here
-import BoatRD from './components/BoatRDs/BoatRD';
-import TripD from './components/TripD/TripD';
-import TripR from './components/TripR/TripR';
-import BoatR from './components/BoatR/BoatR';
-import UpData from './components/Updata/UpData';
-import BoatHome from './components/BoatHome/BoatHome';
+import BoatRD from './Components/BoatRDs/BoatRD';
+import TripD from './Components/TripD/TripD';
+import TripR from './Components/TripR/TripR';
+import BoatR from './Components/BoatR/BoatR';
+import UpData from './Components/Updata/UpData';
+import BoatHome from './Components/BoatHome/BoatHome';
 
 function App() {
   return (
