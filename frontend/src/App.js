@@ -6,6 +6,13 @@ import TripR from './Components/TripR/TripR';
 import BoatR from './Components/BoatR/BoatR';
 import UpData from './Components/Updata/UpData';
 import BoatHome from './Components/BoatHome/BoatHome';
+import { Routes, Route } from 'react-router-dom';
+import Home from "./Components/Home/Home";
+import AddStock from './Components/Add stock/AddStock';
+//import ShowDetails from './Component/Details/Details';
+//import Details from './Component/Details/Details';
+import AddNewScock from './Components/Add new stock/AddNewScock';
+import UpdateScock from './Components/UpdateScock/UpdateScock';
 import {Route, Routes } from 'react-router';
 import './App.css';
 import Loan from './Components/Loan/Loan';
@@ -17,6 +24,22 @@ import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import Contactadmin from './Components/Contactadmin/Contactadmin';
 import Uploadcollateral from './Components/Uploadcollateral/Uploadcollateral';
+
+
+function App() {
+  return (
+    <React.Fragment>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/mainhome" element={<Home />} />
+      <Route path="/addstock" element={<AddStock />} />
+      <Route path="/AddNewStock" element={<AddNewScock />} />
+      <Route path="/addstock/:id" element={<UpdateScock />} />
+
+
+    </Routes>
+    </React.Fragment>
+
 
 function App() {
   return (

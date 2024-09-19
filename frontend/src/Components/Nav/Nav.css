@@ -1,0 +1,55 @@
+/* General styling for the navigation bar */
+.home-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1e3a8a; /* Dark blue background */
+    display: flex;
+    justify-content: center; /* Center align the navigation items */
+  }
+  
+  .home-ll {
+    float: left;
+    margin: 5px; /* Spacing between navigation items */
+  }
+  
+  .home-ll h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 100;
+  }
+  
+  /* Link styling */
+  .home-a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: px 2px;
+    margin-right: 65px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  /* Active/hovered link styling */
+  .home-a:hover,
+  .home-a.active {
+    background-color: #706fc4; /* Lighter blue on hover/active */
+    margin: 25.5px;
+    padding: 0.0002cm;
+    color: white; /* Text color remains white */
+  }
+  
+  /* Responsive design adjustments */
+  @media screen and (max-width: 600px) {
+    .home-ul {
+      flex-direction: column; /* Stack the items vertically on small screens */
+      align-items: center;
+    }
+  
+    .home-ll {
+      margin: 10px 0; /* Adjust spacing for stacked items */
+    }
+  }
+  
