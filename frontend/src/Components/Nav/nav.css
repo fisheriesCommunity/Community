@@ -1,40 +1,55 @@
-/* App.css */
-
-.loan-ul {
+/* General styling for the navigation bar */
+.home-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, #007bff, #00c6ff); /* Gradient background */
     overflow: hidden;
+    background-color: #1e3a8a; /* Dark blue background */
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    justify-content: center; /* Center align the navigation items */
   }
   
-  .loan-ll {
-    display: inline;
+  .home-ll {
+    float: left;
+    margin: 5px; /* Spacing between navigation items */
   }
   
-  .loan-ll h1 {
-    font-size: 1.3rem;
-    font-weight: 600; /* Slightly bolder font */
-    color: #ffffff; /* White text color */
-    padding: 14px 20px;
+  .home-ll h1 {
     margin: 0;
+    font-size: 18px;
+    font-weight: 100;
+  }
+  
+  /* Link styling */
+  .home-a {
+    display: block;
+    color: white;
     text-align: center;
+    padding: px 2px;
+    margin-right: 65px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 8px;
   }
   
-  .loan-ll h1:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent white on hover */
-    cursor: pointer;
-    transform: translateY(-2px); /* Slight lift on hover */
+  /* Active/hovered link styling */
+  .home-a:hover,
+  .home-a.active {
+    background-color: #706fc4; /* Lighter blue on hover/active */
+    margin: 25.5px;
+    padding: 0.0002cm;
+    color: white; /* Text color remains white */
   }
   
-  .loan-ll h1:active {
-    transform: translateY(1px); /* Press down effect on click */
+  /* Responsive design adjustments */
+  @media screen and (max-width: 600px) {
+    .home-ul {
+      flex-direction: column; /* Stack the items vertically on small screens */
+      align-items: center;
+    }
+  
+    .home-ll {
+      margin: 10px 0; /* Adjust spacing for stacked items */
+    }
   }
   
