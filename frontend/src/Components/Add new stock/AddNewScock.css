@@ -1,0 +1,45 @@
+/* Form Container */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #007BFF;
+    border-radius: 8px;
+    background-color: #f0f8ff; /* Light blue background */
+  }
+  
+  /* Input Fields */
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #004080; /* Dark blue text */
+    background-color: #ffffff; /* White background */
+  }
+  
+  /* Input Placeholder Color */
+  input::placeholder {
+    color: #007BFF;
+  }
+  
+  /* Submit Button */
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Submit Button Hover Effect */
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
